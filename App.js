@@ -16,6 +16,12 @@ import ExportComponent from "./RNComponent/ExportComponent";
 import PropsComponent from "./RNComponent/PropsComponent";
 import StateComponent from "./RNComponent/StateComponent";
 
+import RefsTestComponent from "./RNComponent/refs_component/RefsTestComponent";
+import ClassComponent from "./RNComponent/class_component/ClassComponent.js";
+import ClickComponent from "./RNComponent/clickcomponent/ClickComponent";
+import ContainerComponent from "./RNComponent/params_transfer/ContainerComponent.js";
+
+
 const instructions = Platform.select({
     ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
     android:
@@ -29,6 +35,7 @@ export default class App extends Component<Props> {
         super(props);
         this.state = {
             remove: false,
+            size: 0,
         }
     }
 
@@ -40,11 +47,7 @@ export default class App extends Component<Props> {
         var {name, age} = param;
         return (
             <View style={styles.container}>
-                {/* <Text style={styles.welcome}>Welcome to React Native!</Text>
-                <Text style={styles.instructions}>To get started, edit App.js</Text>
-                <Text style={styles.instructions}>{instructions}</Text>*/}
                 <HelloComponent name="xxf2"/>
-
                 {/*<LifecycleComponent name="life"/>*/}
                 {view}
                 <Text onPress={() => {
@@ -59,6 +62,10 @@ export default class App extends Component<Props> {
                 <PropsComponent name={name} age={age}/>
 
                 <StateComponent/>
+                <RefsTestComponent/>
+                <ClassComponent/>
+                <ClickComponent/>
+                <ContainerComponent/>
             </View>
         );
     }

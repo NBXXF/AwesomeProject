@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Image, Platform, StyleSheet, Text, View} from 'react-native';
 
 export default class StateComponent extends Component {
     /**
@@ -7,7 +7,7 @@ export default class StateComponent extends Component {
      * @type {{size: number}}
      */
     state = {
-        size: 40,
+        size: 100,
     }
 
     constructor(props) {
@@ -21,6 +21,21 @@ export default class StateComponent extends Component {
     }
 
     render() {
-        return <Text>StateComponent_{this.state.size}</Text>;
+        return <View>
+            <Text>StateComponent_{this.state.size}</Text>
+            <Image source={require("./src/pic/dog.jpg")}
+                   style={{width: this.state.size, height: this.state.size}}/>
+            <Text onPress={() => {
+                this.setState({
+                    size: this.state.size + 10,
+                });
+            }
+            }>放大图片</Text>
+            <Text onPress={() => {
+                this.setState({
+                    size: this.state.size - 10,
+                })
+            }}>缩小图片</Text>
+        </View>;
     }
 }
