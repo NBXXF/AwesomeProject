@@ -20,7 +20,7 @@ import RefsTestComponent from "./RNComponent/refs_component/RefsTestComponent";
 import ClassComponent from "./RNComponent/class_component/ClassComponent.js";
 import ClickComponent from "./RNComponent/clickcomponent/ClickComponent";
 import ContainerComponent from "./RNComponent/params_transfer/ContainerComponent.js";
-
+import ReduxTest from "./RNComponent/redux/pages/ReduxTest.js";
 
 const instructions = Platform.select({
     ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -66,6 +66,7 @@ export default class App extends Component<Props> {
                 <ClassComponent/>
                 <ClickComponent/>
                 <ContainerComponent/>
+                <ReduxTest/>
             </View>
         );
     }
